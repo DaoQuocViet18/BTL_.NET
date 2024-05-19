@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -12,7 +13,6 @@ namespace BTL_QLSV
 {
     public partial class form_SV_DKHP : Form
     {
-        Database db = Database.getInstance();
         private string current_Comb_SelectedItem;
 
         public form_SV_DKHP()
@@ -25,9 +25,9 @@ namespace BTL_QLSV
             DateTime ngayCap = new DateTime(2021, 9, 21);
             AddNamKy(ngayCap);          
                                 
-            dgvHocPhanDangChoDangKy.DataSource = db.selectDataHP_chuaDK();
+            dgvHocPhanDangChoDangKy.DataSource = SelectDataHP_chuaDK();
 
-            dgvHocPhanDaDangKy.DataSource = db.selectDataLopHP_daDK("//");
+            dgvHocPhanDaDangKy.DataSource = SelectDataLopHP_daDK("//");
 
 
             dgvHocPhanDangChoDangKy.Columns["MaHocPhan"].Visible = false;
@@ -42,10 +42,10 @@ namespace BTL_QLSV
             dgvHocPhanDaDangKy.Columns["SoTinChi"].HeaderText = "Số tín chỉ";
             dgvHocPhanDaDangKy.Columns["SoDonViHocTrinh"].HeaderText = "Số ĐV học trình";
             dgvHocPhanDaDangKy.Columns["TrangThaiLopHocPhan"].HeaderText = "TT lớp HP";
-            dgvHocPhanDaDangKy.Columns["NamKyHoc"].Visible = false;      
+            dgvHocPhanDaDangKy.Columns["NamKyHoc"].Visible = false;
 
-            db.ThayDoiKichThuc_cua_DataGridView(dgvHocPhanDangChoDangKy);
-            db.ThayDoiKichThuc_cua_DataGridView(dgvHocPhanDaDangKy);
+            DataAccess.ThayDoiKichThuc_cua_DataGridView(dgvHocPhanDangChoDangKy);
+            DataAccess.ThayDoiKichThuc_cua_DataGridView(dgvHocPhanDaDangKy);
 
             Set_up_Cho_Form_SV_DKHP();
 
@@ -113,9 +113,8 @@ namespace BTL_QLSV
             current_Comb_SelectedItem = combNamKy.SelectedItem.ToString();
 
             // load lại dữ liệu của bảng dgvHocPhanDaDangKy cho đúng với current_Comb_SelectedItem           
-            Database db = Database.getInstance();
-            dgvHocPhanDaDangKy.DataSource = db.selectDataLopHP_daDK(current_Comb_SelectedItem);
-            db.ThayDoiKichThuc_cua_DataGridView(dgvHocPhanDaDangKy);
+            dgvHocPhanDaDangKy.DataSource = SelectDataLopHP_daDK(current_Comb_SelectedItem);
+            DataAccess.ThayDoiKichThuc_cua_DataGridView(dgvHocPhanDaDangKy);
         }
 
         private void dgvHocPhanDangChoDangKy_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
@@ -134,15 +133,43 @@ namespace BTL_QLSV
                 form_SV_DKHP_2.ShowDialog();
 
                  
-                Database db = Database.getInstance();
-                dgvHocPhanDangChoDangKy.DataSource = db.selectDataHP_chuaDK();
+                dgvHocPhanDangChoDangKy.DataSource = SelectDataHP_chuaDK();
 
-                db.ThayDoiKichThuc_cua_DataGridView(dgvHocPhanDangChoDangKy);
-                db.ThayDoiKichThuc_cua_DataGridView(dgvHocPhanDaDangKy);
+                DataAccess.ThayDoiKichThuc_cua_DataGridView(dgvHocPhanDangChoDangKy);
+                DataAccess.ThayDoiKichThuc_cua_DataGridView(dgvHocPhanDaDangKy);
 
                 Set_up_Cho_Form_SV_DKHP();
             }
         }
 
+
+        public DataTable SelectDataHP_chuaDK()
+        {
+
+                string sql = "SELECT * " +
+                    "FROM tblHocPhan AS hp " +
+                    "WHERE MaHocPhan NOT IN ( SELECT MaHocPhan " +
+                                            "FROM tblLopHocPhan AS lhp " +
+                                            "JOIN tblSinhVien AS sv ON lhp.MaSinhVien LIKE CONCAT('%', sv.MaSinhVien, '%') " +
+                                            "WHERE CHARINDEX('" + DataAccess.maSinhVien + "', lhp.MaSinhVien ) > 0)" +
+                          "AND MaNganh = " + DataAccess.maNganh;
+
+                return DataAccess.GetDataTable(sql);
+
+        }
+
+        public DataTable SelectDataLopHP_daDK(string namKyHoc)
+        {
+            string sql = "SELECT lhp.MaLopHocPhan, " +
+                            "lhp.TenLopHocPhan, " +
+                            "hp.SoTinChi , " +
+                            "hp.SoDonViHocTrinh, " +
+                            "lhp.TrangThaiLopHocPhan, " +
+                            "hp.NamKyHoc " +
+                        "FROM tblLopHocPhan AS lhp " +
+                        "JOIN tblHocPhan AS hp ON hp.MaHocPhan = lhp.MaHocPhan " +
+                        "WHERE hp.NamKyHoc LIKE N'%" + namKyHoc + "%' AND CHARINDEX('" + DataAccess.maSinhVien + "', lhp.MaSinhVien ) > 0";
+            return DataAccess.GetDataTable(sql);
+        }
     }
 }

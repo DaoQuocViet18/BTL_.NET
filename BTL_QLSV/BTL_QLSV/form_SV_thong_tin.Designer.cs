@@ -61,7 +61,7 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.lbTenSinhVien.AutoSize = true;
-            this.lbTenSinhVien.Location = new System.Drawing.Point(3, 146);
+            this.lbTenSinhVien.Location = new System.Drawing.Point(3, 73);
             this.lbTenSinhVien.Name = "lbTenSinhVien";
             this.lbTenSinhVien.Size = new System.Drawing.Size(388, 73);
             this.lbTenSinhVien.TabIndex = 1;
@@ -87,7 +87,7 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.lbNgaySinh.AutoSize = true;
-            this.lbNgaySinh.Location = new System.Drawing.Point(3, 73);
+            this.lbNgaySinh.Location = new System.Drawing.Point(3, 146);
             this.lbNgaySinh.Name = "lbNgaySinh";
             this.lbNgaySinh.Size = new System.Drawing.Size(388, 73);
             this.lbNgaySinh.TabIndex = 3;
@@ -183,14 +183,14 @@
             this.tlpThongTin.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tlpThongTin.Controls.Add(this.lbMaSinhVien, 0, 0);
             this.tlpThongTin.Controls.Add(this.lbKhoaHoc, 1, 4);
-            this.tlpThongTin.Controls.Add(this.lbTenSinhVien, 0, 2);
             this.tlpThongTin.Controls.Add(this.lbSoDienThoai, 0, 4);
             this.tlpThongTin.Controls.Add(this.lbGioiTinh, 1, 0);
             this.tlpThongTin.Controls.Add(this.lbEmail, 1, 3);
-            this.tlpThongTin.Controls.Add(this.lbNgaySinh, 0, 1);
             this.tlpThongTin.Controls.Add(this.lbNganh, 0, 3);
             this.tlpThongTin.Controls.Add(this.lbDiaChi, 1, 1);
             this.tlpThongTin.Controls.Add(this.lbLopHoc, 1, 2);
+            this.tlpThongTin.Controls.Add(this.lbTenSinhVien, 0, 1);
+            this.tlpThongTin.Controls.Add(this.lbNgaySinh, 0, 2);
             this.tlpThongTin.Location = new System.Drawing.Point(40, 47);
             this.tlpThongTin.Name = "tlpThongTin";
             this.tlpThongTin.RowCount = 5;

@@ -12,7 +12,6 @@ namespace BTL_QLSV
 {
     public partial class form_SV_thong_tin : Form
     {
-        Database db = Database.getInstance();
         DataRow dataSV;
         public form_SV_thong_tin()
         {
@@ -21,7 +20,24 @@ namespace BTL_QLSV
 
         private void form_SV_thong_tin_Load(object sender, EventArgs e)
         {
-            dataSV = db.selectDataSV();
+            string sql = "SELECT sv.MaSinhVien, " +
+                            "sv.TenSinhVien, " +
+                            "sv.MaLop, " +
+                            "sv.MaLopHocPhan, " +
+                            "sv.Email, " +
+                            "sv.SoDienThoai, " +
+                            "sv.DiaChi, " +
+                            "sv.NgaySinh, " +
+                            "sv.GioiTinh, " +
+                            "sv.NgayVaoTruong, " +
+                            "lh.TenLop, " +
+                            "ng.TenNganh " +
+                    "FROM tblSinhVien AS sv " +
+                    "JOIN tblLop AS lh ON sv.MaLop = lh.MaLop " +
+                    "JOIN tblNganh AS ng ON lh.MaNganh = ng.MaNganh " +
+                    "WHERE MaSinhVien = " + DataAccess.maSinhVien;
+            dataSV = DataAccess.GetDataRow(sql);
+
 
             lbMaSinhVien.Text = "Mã sinh viên: " + Convert.ToInt32(dataSV["MaSinhVien"]).ToString("D5"); // Chuyển đổi sang dạng 00001
             lbTenSinhVien.Text = "Tên sinh viên: " + dataSV["TenSinhVien"].ToString();
@@ -40,7 +56,7 @@ namespace BTL_QLSV
 
         private void form_SV_thong_tin_SizeChanged(object sender, EventArgs e)
         {
-            db.ThayDoiKT_Label_Button_cua_TableLayoutPanel(tlpThongTin, 0.25f);
+            DataAccess.ThayDoiKT_Label_Button_cua_TableLayoutPanel(tlpThongTin, 0.25f);
         }
     }
 }

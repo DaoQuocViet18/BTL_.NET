@@ -60,12 +60,16 @@ namespace BTL_QLSV
 
                 //   MessageBox.Show("tbl = " + tbl + "\nmaSinhVien = " + maSinhVien + "\nmatkhau = " + matkhau);
 
-                Database db = Database.getInstance();
-                DataRow dataSV = db.testDataSV_DangNhap(tbl, maSinhVien, matkhau);
+
+                string sql = "SELECT sv.MaSinhVien,sv.MatKhau, lop.MaNganh " +
+                    "FROM " + tbl + " AS sv " +
+                    "JOIN tblLop AS lop ON lop.MaLop = sv.MaLop " +
+                    "WHERE sv.MaSinhVien = " + maSinhVien + " AND sv.MatKhau = " + matkhau;
+                DataRow dataSV = DataAccess.GetDataRow(sql);
                 if (dataSV != null)
                 {
-                    db.maSinhVien = int.Parse(dataSV["MaSinhVien"].ToString());
-                    db.maNganh = int.Parse(dataSV["MaNganh"].ToString());
+                    DataAccess.maSinhVien = int.Parse(dataSV["MaSinhVien"].ToString());
+                    DataAccess.maNganh = int.Parse(dataSV["MaNganh"].ToString());
 
                 }
                 else

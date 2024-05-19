@@ -15,7 +15,6 @@ namespace BTL_QLSV
 {
     public partial class form_LichHoc : Form
     {
-        Database db = Database.getInstance();
         DataTable dt;
 
         Label[] arr_lbThu = new Label[7];
@@ -74,8 +73,8 @@ namespace BTL_QLSV
 
         private void form_LichHoc_SizeChanged(object sender, EventArgs e)
         {
-            db.ThayDoiKT_Label_Button_cua_TableLayoutPanel(tlpChucNang, 0.5f);
-            db.ThayDoiKT_Label_Button_cua_TableLayoutPanel(tlpLichHoc, 0.045f);
+            DataAccess.ThayDoiKT_Label_Button_cua_TableLayoutPanel(tlpChucNang, 0.5f);
+            DataAccess.ThayDoiKT_Label_Button_cua_TableLayoutPanel(tlpLichHoc, 0.045f);
         }
 
 
@@ -117,8 +116,16 @@ namespace BTL_QLSV
                 thu++;
             }
 
-
-            dt = db.selectDataLichHoc();
+            string sql = "SELECT lhp.TenLopHocPhan, " +
+                            "lh.ThuTietHoc, " +
+                            "lh.PhongHoc, " +
+                            "lh.GiangVien, " +
+                            "lh.ThoiGianHoc, " +
+                            "lh.ThoiGianThi " +
+                    "FROM tblLichHoc AS lh " +
+                    "JOIN[tblLopHocPhan] AS lhp ON CHARINDEX('" + DataAccess.maSinhVien + "', lhp.MaSinhVien ) > 0 " +
+                    "WHERE lhp.MaLopHocPhan = lh.MaLopHocPhan";
+            dt = DataAccess.GetDataTable(sql);
 
             foreach (DataRow dtrow in dt.Rows)
             {
