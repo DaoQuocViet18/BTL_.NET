@@ -38,7 +38,7 @@ namespace BTL_QLSV
             }
             catch (Exception ex)
             {
-                MessageBox.Show("lỗi load dữ liệu của GetDataRow" + ex.Message);
+                MessageBox.Show("lỗi load dữ liệu của GetDataRow \n" + ex.Message);
                 dtRow = null;
                 return dtRow;
             }
@@ -62,7 +62,7 @@ namespace BTL_QLSV
             }
             catch (Exception ex)
             {
-                MessageBox.Show("lỗi load dữ liệu của GetDataTable" + ex.Message);
+                MessageBox.Show("lỗi load dữ liệu của GetDataTable \n" + ex.Message);
                 return null;
             }
             finally
@@ -83,7 +83,7 @@ namespace BTL_QLSV
             }
             catch (Exception ex)
             {
-                MessageBox.Show("lỗi load dữ liệu " + ex.Message);
+                MessageBox.Show("lỗi load dữ liệu \n" + ex.Message);
             }
             finally
             {

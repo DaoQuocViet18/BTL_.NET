@@ -48,7 +48,7 @@
             this.dgvLopHocPhan.RowHeadersWidth = 51;
             this.dgvLopHocPhan.RowTemplate.Height = 24;
             this.dgvLopHocPhan.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvLopHocPhan.Size = new System.Drawing.Size(801, 247);
+            this.dgvLopHocPhan.Size = new System.Drawing.Size(1467, 247);
             this.dgvLopHocPhan.TabIndex = 0;
             this.dgvLopHocPhan.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvLopHocPhan_CellDoubleClick);
             // 
@@ -66,7 +66,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(1466, 450);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.dgvLopHocPhan);
             this.Name = "form_SV_DKHP_2";
