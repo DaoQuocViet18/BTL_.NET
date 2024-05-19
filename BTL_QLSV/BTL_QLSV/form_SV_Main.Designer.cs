@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(form_SV_Main));
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.trangChuToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.dangKyHocPhanToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -38,6 +39,7 @@
             // 
             // menuStrip1
             // 
+            this.menuStrip1.BackColor = System.Drawing.Color.DarkBlue;
             this.menuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.trangChuToolStripMenuItem,
@@ -51,22 +53,28 @@
             // 
             // trangChuToolStripMenuItem
             // 
+            this.trangChuToolStripMenuItem.ForeColor = System.Drawing.SystemColors.Control;
+            this.trangChuToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("trangChuToolStripMenuItem.Image")));
             this.trangChuToolStripMenuItem.Name = "trangChuToolStripMenuItem";
-            this.trangChuToolStripMenuItem.Size = new System.Drawing.Size(87, 24);
+            this.trangChuToolStripMenuItem.Size = new System.Drawing.Size(107, 24);
             this.trangChuToolStripMenuItem.Text = "Trang chủ";
             this.trangChuToolStripMenuItem.Click += new System.EventHandler(this.trangChuToolStripMenuItem_Click);
             // 
             // dangKyHocPhanToolStripMenuItem
             // 
+            this.dangKyHocPhanToolStripMenuItem.ForeColor = System.Drawing.SystemColors.Control;
+            this.dangKyHocPhanToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("dangKyHocPhanToolStripMenuItem.Image")));
             this.dangKyHocPhanToolStripMenuItem.Name = "dangKyHocPhanToolStripMenuItem";
-            this.dangKyHocPhanToolStripMenuItem.Size = new System.Drawing.Size(142, 24);
+            this.dangKyHocPhanToolStripMenuItem.Size = new System.Drawing.Size(162, 24);
             this.dangKyHocPhanToolStripMenuItem.Text = "Đăng ký học phần";
             this.dangKyHocPhanToolStripMenuItem.Click += new System.EventHandler(this.dangKyHocPhanToolStripMenuItem_Click);
             // 
             // lichhocToolStripMenuItem
             // 
+            this.lichhocToolStripMenuItem.ForeColor = System.Drawing.SystemColors.Control;
+            this.lichhocToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("lichhocToolStripMenuItem.Image")));
             this.lichhocToolStripMenuItem.Name = "lichhocToolStripMenuItem";
-            this.lichhocToolStripMenuItem.Size = new System.Drawing.Size(77, 24);
+            this.lichhocToolStripMenuItem.Size = new System.Drawing.Size(97, 24);
             this.lichhocToolStripMenuItem.Text = "Lịch học";
             this.lichhocToolStripMenuItem.Click += new System.EventHandler(this.lichhocToolStripMenuItem_Click);
             // 
