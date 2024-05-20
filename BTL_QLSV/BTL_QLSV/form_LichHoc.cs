@@ -209,8 +209,8 @@ namespace BTL_QLSV
 
             if (mauLH == mauLichHoc["BuoiHoc"])           
                 newLabel.Text += "\n" + dtrow["GiangVien"].ToString();
-            
 
+            newLabel.Anchor = AnchorStyles.Left | AnchorStyles.Right | AnchorStyles.Top | AnchorStyles.Bottom;
             newLabel.AutoSize = true; // Cho phép Label tự động điều chỉnh kích thước dựa trên nội dung
             newLabel.BackColor = mauLH;
             newLabel.BorderStyle = BorderStyle.FixedSingle;           

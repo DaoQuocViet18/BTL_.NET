@@ -71,9 +71,9 @@
             this.tlpLichHoc.Controls.Add(this.lbThu6, 6, 0);
             this.tlpLichHoc.Controls.Add(this.lbThu5, 5, 0);
             this.tlpLichHoc.Controls.Add(this.lbThu4, 4, 0);
-            this.tlpLichHoc.Controls.Add(this.lbThu3, 3, 0);
             this.tlpLichHoc.Controls.Add(this.lbThu2, 2, 0);
             this.tlpLichHoc.Controls.Add(this.lbChuNhat, 1, 0);
+            this.tlpLichHoc.Controls.Add(this.lbThu3, 3, 0);
             this.tlpLichHoc.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tlpLichHoc.Location = new System.Drawing.Point(2, 151);
             this.tlpLichHoc.Name = "tlpLichHoc";

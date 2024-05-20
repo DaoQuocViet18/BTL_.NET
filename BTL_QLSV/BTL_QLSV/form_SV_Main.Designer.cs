@@ -47,7 +47,7 @@
             this.lichhocToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(1582, 28);
+            this.menuStrip1.Size = new System.Drawing.Size(1582, 30);
             this.menuStrip1.TabIndex = 14;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -56,7 +56,7 @@
             this.trangChuToolStripMenuItem.ForeColor = System.Drawing.SystemColors.Control;
             this.trangChuToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("trangChuToolStripMenuItem.Image")));
             this.trangChuToolStripMenuItem.Name = "trangChuToolStripMenuItem";
-            this.trangChuToolStripMenuItem.Size = new System.Drawing.Size(107, 24);
+            this.trangChuToolStripMenuItem.Size = new System.Drawing.Size(107, 26);
             this.trangChuToolStripMenuItem.Text = "Trang chủ";
             this.trangChuToolStripMenuItem.Click += new System.EventHandler(this.trangChuToolStripMenuItem_Click);
             // 
@@ -81,9 +81,9 @@
             // panelContent
             // 
             this.panelContent.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelContent.Location = new System.Drawing.Point(0, 28);
+            this.panelContent.Location = new System.Drawing.Point(0, 30);
             this.panelContent.Name = "panelContent";
-            this.panelContent.Size = new System.Drawing.Size(1582, 525);
+            this.panelContent.Size = new System.Drawing.Size(1582, 523);
             this.panelContent.TabIndex = 15;
             // 
             // form_SV_Main
