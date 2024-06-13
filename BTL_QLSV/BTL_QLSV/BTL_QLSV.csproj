@@ -52,61 +52,152 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="DataAccess.cs" />
-    <Compile Include="form_DangNhap.cs">
+    <Compile Include="Form_Admin\Admin.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="form_DangNhap.Designer.cs">
+    <Compile Include="Form_Admin\Admin.designer.cs">
+      <DependentUpon>Admin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form_Admin\Class.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form_Admin\Class.designer.cs">
+      <DependentUpon>Class.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form_Admin\DataAcessAdmin.cs" />
+    <Compile Include="Form_Admin\Department.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form_Admin\Department.designer.cs">
+      <DependentUpon>Department.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form_Admin\Majors.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form_Admin\Majors.designer.cs">
+      <DependentUpon>Majors.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form_Admin\statistical.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form_Admin\statistical.designer.cs">
+      <DependentUpon>statistical.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form_Admin\Student.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form_Admin\Student.designer.cs">
+      <DependentUpon>Student.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form_Admin\Subject.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form_Admin\Subject.designer.cs">
+      <DependentUpon>Subject.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form_Admin\SubjectClass.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form_Admin\SubjectClass.designer.cs">
+      <DependentUpon>SubjectClass.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form_Admin\SubjectClassAdd_ChildForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form_Admin\SubjectClassAdd_ChildForm.designer.cs">
+      <DependentUpon>SubjectClassAdd_ChildForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form_DP\Login_DP.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form_DP\Login_DP.designer.cs">
+      <DependentUpon>Login_DP.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form_SV\DataAccess.cs" />
+    <Compile Include="Form_DP\form_DangNhap.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form_DP\form_DangNhap.Designer.cs">
       <DependentUpon>form_DangNhap.cs</DependentUpon>
     </Compile>
-    <Compile Include="form_LichHoc.cs">
+    <Compile Include="Form_SV\form_LichHoc.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="form_LichHoc.Designer.cs">
+    <Compile Include="Form_SV\form_LichHoc.Designer.cs">
       <DependentUpon>form_LichHoc.cs</DependentUpon>
     </Compile>
-    <Compile Include="form_SV_DKHP.cs">
+    <Compile Include="Form_SV\form_SV_DKHP.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="form_SV_DKHP.Designer.cs">
+    <Compile Include="Form_SV\form_SV_DKHP.Designer.cs">
       <DependentUpon>form_SV_DKHP.cs</DependentUpon>
     </Compile>
-    <Compile Include="form_SV_DKHP_2.cs">
+    <Compile Include="Form_SV\form_SV_DKHP_2.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="form_SV_DKHP_2.Designer.cs">
+    <Compile Include="Form_SV\form_SV_DKHP_2.Designer.cs">
       <DependentUpon>form_SV_DKHP_2.cs</DependentUpon>
     </Compile>
-    <Compile Include="form_SV_Main.cs">
+    <Compile Include="Form_SV\form_SV_Main.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="form_SV_Main.Designer.cs">
+    <Compile Include="Form_SV\form_SV_Main.Designer.cs">
       <DependentUpon>form_SV_Main.cs</DependentUpon>
     </Compile>
-    <Compile Include="form_SV_thong_tin.cs">
+    <Compile Include="Form_SV\form_SV_thong_tin.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="form_SV_thong_tin.Designer.cs">
+    <Compile Include="Form_SV\form_SV_thong_tin.Designer.cs">
       <DependentUpon>form_SV_thong_tin.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="form_DangNhap.resx">
+    <EmbeddedResource Include="Form_Admin\Admin.resx">
+      <DependentUpon>Admin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form_Admin\Class.resx">
+      <DependentUpon>Class.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form_Admin\Department.resx">
+      <DependentUpon>Department.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form_Admin\Majors.resx">
+      <DependentUpon>Majors.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form_Admin\statistical.resx">
+      <DependentUpon>statistical.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form_Admin\Student.resx">
+      <DependentUpon>Student.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form_Admin\Subject.resx">
+      <DependentUpon>Subject.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form_Admin\SubjectClass.resx">
+      <DependentUpon>SubjectClass.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form_Admin\SubjectClassAdd_ChildForm.resx">
+      <DependentUpon>SubjectClassAdd_ChildForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form_DP\form_DangNhap.resx">
       <DependentUpon>form_DangNhap.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="form_LichHoc.resx">
+    <EmbeddedResource Include="Form_DP\Login_DP.resx">
+      <DependentUpon>Login_DP.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form_SV\form_LichHoc.resx">
       <DependentUpon>form_LichHoc.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="form_SV_DKHP.resx">
+    <EmbeddedResource Include="Form_SV\form_SV_DKHP.resx">
       <DependentUpon>form_SV_DKHP.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="form_SV_DKHP_2.resx">
+    <EmbeddedResource Include="Form_SV\form_SV_DKHP_2.resx">
       <DependentUpon>form_SV_DKHP_2.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="form_SV_Main.resx">
+    <EmbeddedResource Include="Form_SV\form_SV_Main.resx">
       <DependentUpon>form_SV_Main.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="form_SV_thong_tin.resx">
+    <EmbeddedResource Include="Form_SV\form_SV_thong_tin.resx">
       <DependentUpon>form_SV_thong_tin.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -141,5 +232,6 @@
     <Content Include="Image_file\icons8-checkbox-50.png" />
     <Content Include="Image_file\icons8-home-50.png" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

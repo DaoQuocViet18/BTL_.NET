@@ -2,7 +2,9 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using System.Web.UI.WebControls;
 using System.Windows.Forms;
+using WindowsFormsApp1;
 
 namespace BTL_QLSV
 {
@@ -16,7 +18,7 @@ namespace BTL_QLSV
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new form_DangNhap());
+            Application.Run(new Login_DP());
         }
     }
 }
